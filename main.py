@@ -48,5 +48,13 @@ class Monster():
 
 class Weapon(ABC):
     @abstractmethod
-    def attack(self, fighter):
+    def attack(self, weapon):
         pass
+
+class Sword(Weapon):
+    def attack(self, weapon):
+        print()
+
+class Bow(Weapon):
+    def attack(self, weapon):
+        print()
