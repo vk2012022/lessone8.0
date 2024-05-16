@@ -38,12 +38,12 @@
 from abc import ABC, abstractmethod
 
 class Fighter():
-    def __init__(self, name):
+    def __init__(self, name, weapon):
         self.name = name
-        self.weapon = None
+        self.weapon = weapon
 
     def changeWeapon(self):
-        self.attack(self.weapon)
+        self.weapon.attack(self)
 
 class Monster():
     def __init__(self, name):
@@ -56,8 +56,18 @@ class Weapon(ABC):
 
 class Sword(Weapon):
     def attack(self, weapon):
-        print()
+        print(f"Богатырь {fighter.name} выбирает меч.\n{fighter.name} наносит удар мечом.")
+        print(f"{monster.name} побежден!")
 
 class Bow(Weapon):
     def attack(self, weapon):
-        print()
+        print(f"Богатырь {fighter.name} выбирает лук.\n{fighter.name} наносит удар из лука.")
+        print(f"{monster.name} побежден!")
+
+fighter = Fighter("Илья Муромец", Sword())
+monster = Monster("Соловей Разбойник")
+fighter.changeWeapon()
+
+fighter = Fighter("Алеша Попович", Bow())
+monster = Monster("Дракон")
+fighter.changeWeapon()
