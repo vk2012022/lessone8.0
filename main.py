@@ -54,6 +54,7 @@ class Weapon(ABC):
     def attack(self, weapon):
         pass
 
+
 class Sword(Weapon):
     def attack(self, weapon):
         print(f"Богатырь {fighter.name} выбирает меч.\n{fighter.name} наносит удар мечом.")
