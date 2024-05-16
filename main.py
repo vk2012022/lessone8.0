@@ -42,6 +42,9 @@ class Fighter():
         self.name = name
         self.weapon = None
 
+    def changeWeapon(self):
+        self.attack(self.weapon)
+
 class Monster():
     def __init__(self, name):
         self.name = name
